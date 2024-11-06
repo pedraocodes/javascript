@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gringo ou Brasileiro?</title>
+</head>
+
+<body>
+    <h1>Gringo ou Brasileiro?</h1>
+    Qual é o seu país? <input type="text" name="paístxt" id="paístxt">
+    <input type="button" value="verificar">
+    <div id="res"></div>
+    <script>
+        var ptxt = window.document.querySelector('input#paístxt')
+        var res = window.document.querySelector('div#res')
+        // var país = String(ptxt.value)
+        var país = ptxt.value
+        window.document.getElementsByTagName('input')[1].addEventListener('click', clicar)
+        function clicar() {
+
+            if (país === "Brasil") {
+                res.innerHTML = `<p>Você é BR, muita marcha, tamo junto!</p>`
+            } else {
+                res.innerHTML = `<p>You are gringo, bem vindo ao meu country!</p>`
+            }
+        }
+
+    </script>
+</body>
+
+</html>

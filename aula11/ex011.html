@@ -15,12 +15,11 @@
     <script>
         var ptxt = window.document.querySelector('input#paístxt')
         var res = window.document.querySelector('div#res')
-        // var país = String(ptxt.value)
-        var país = ptxt.value
+        // var país = String(ptxt.value) - Aqui eu tinha errado, pois a var país
         window.document.getElementsByTagName('input')[1].addEventListener('click', clicar)
         function clicar() {
-
-            if (país === "Brasil") {
+            var país = ptxt.value
+            if (país == 'Brasil') {
                 res.innerHTML = `<p>Você é BR, muita marcha, tamo junto!</p>`
             } else {
                 res.innerHTML = `<p>You are gringo, bem vindo ao meu country!</p>`

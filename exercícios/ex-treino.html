@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo Dinâmico</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+        h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16pt;
+        }
+        div {
+            background-color: blueviolet;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 25pt;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: fit-content;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Testando Fundo Dinâmico</h1>
+    <div id="horario">
+        Hora atual
+    </div>
+    <script>
+        var agora = new Date()
+        var hora = agora.getHours()
+        var minutos = agora.getMinutes()
+        var segundos = agora.getSeconds()
+
+        var horario = window.document.getElementById('horario')
+        horario.innerHTML = (`${hora}:${minutos}:${segundos}`)
+
+        if (hora >= 12) {
+            horario.innerHTML = (`${hora}:${minutos}:${segundos} - `)+('Boa Tarde')
+            horario.style.backgroundColor = 'Yellow'
+            horario.style.color = 'Black'     
+        } if (hora >= 18) {
+            horario.innerHTML = (`${hora}:${minutos}:${segundos} - `)+('Boa Noite')
+            horario.style.backgroundColor = 'darkblue'
+            horario.style.color = 'white'
+        } else {
+            horario.innerHTML = (`${hora}:${minutos}:${segundos} - `)+('Bom Dia')
+            horario.style.backgroundColor = 'lightblue'
+            horario.style.color = 'black'
+        }
+    </script>
+</body>
+</html>

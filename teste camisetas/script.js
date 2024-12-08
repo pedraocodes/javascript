@@ -1,0 +1,1 @@
+let shirt = document.querySelector('li')
